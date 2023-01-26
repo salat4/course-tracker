@@ -1,9 +1,11 @@
 import React from 'react'
-
+// import zxc from "../../functions/courses"
 const Course = ({ course, refreshCourses }) => {
+
+    
     const markCoursePurchased = async () => {
         try {
-            await fetch('/.netlify/functions/courses', {
+            await fetch('/functions/courses', {
                 method: 'PUT',
                 body: JSON.stringify({ ...course, purchased: true }),
             });
@@ -15,7 +17,7 @@ const Course = ({ course, refreshCourses }) => {
 
     const deleteCourse = async () => {
         try {
-            await fetch('/.netlify/functions/courses', {
+            await fetch('/functions/courses', {
                 method: 'DELETE',
                 body: JSON.stringify({ id: course.id }),
             });

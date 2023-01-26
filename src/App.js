@@ -1,15 +1,25 @@
 import CourseForm from './components/CourseForm';
 import CourseList from './components/CourseList';
 import './App.css';
+
 import { useEffect, useState } from 'react';
 
 function App() {
   const [courses, setCourses] = useState([]);
   
   const loadCourses = async () => {
+    
     try {
-      const res = await fetch('/.netlify/functions/courses');
+      const res = await fetch('/functions/courses',
+      {method:"GET",
+        // headers:{
+        //   Authorization: `Bearer keysSlQL0EVpcZJgu`
+        // }
+      }
+      );
+      console.log(res);
       const courses = await res.json();
+      
       setCourses(courses);
     } catch (error) {
         console.error(error);

@@ -1,0 +1,10 @@
+name = "course-tracker"
+type = "javascript"
+account_id = "50e5244dba60cc1556acf5df17a1336e"
+workers_dev = true
+compatibility_date = "2023-01-20"
+main = "src/index.js"
+[vars]
+AIRTABLE_BASE_ID = "apphWeWmiGhwhIS4L"
+AIRTABLE_TABLE_NAME = "test"
+FORM_URL = "https://course-tracker.mdima4266.workers.dev"
