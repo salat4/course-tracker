@@ -1,7 +1,6 @@
 import CourseForm from './components/CourseForm';
 import CourseList from './components/CourseList';
 import './App.css';
-
 import { useEffect, useState } from 'react';
 
 function App() {
@@ -10,14 +9,11 @@ function App() {
   const loadCourses = async () => {
     
     try {
-      const res = await fetch('/functions/courses',
-      {method:"GET",
-        // headers:{
-        //   Authorization: `Bearer keysSlQL0EVpcZJgu`
-        // }
+      const res = await fetch("https://course-tracker.mdima4266.workers.dev/",
+      {
+        method: "GET",
       }
       );
-      console.log(res);
       const courses = await res.json();
       
       setCourses(courses);

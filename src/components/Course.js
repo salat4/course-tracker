@@ -5,7 +5,7 @@ const Course = ({ course, refreshCourses }) => {
     
     const markCoursePurchased = async () => {
         try {
-            await fetch('/functions/courses', {
+            await fetch('https://course-tracker.mdima4266.workers.dev/', {
                 method: 'PUT',
                 body: JSON.stringify({ ...course, purchased: true }),
             });
@@ -17,7 +17,7 @@ const Course = ({ course, refreshCourses }) => {
 
     const deleteCourse = async () => {
         try {
-            await fetch('/functions/courses', {
+            await fetch('https://course-tracker.mdima4266.workers.dev/', {
                 method: 'DELETE',
                 body: JSON.stringify({ id: course.id }),
             });
@@ -30,11 +30,11 @@ const Course = ({ course, refreshCourses }) => {
     return (
         <div className="list-group-item">
             <a href={course.link}>
-                <h4 className="list-group-item-heading">{course.name}</h4>
+                <h4 className="list-group-item-heading">{course.Name}</h4>
             </a>
             <p>
                 Tags:{' '}
-                {course.tags && course.tags.map((tag, index) => (
+                {course.Tags && course.Tags.map((tag, index) => (
                     <span className="badge badge-primary mr-2" key={index}>{tag}</span>
                 ))}
             </p>
@@ -46,3 +46,11 @@ const Course = ({ course, refreshCourses }) => {
     )
 }
 export default Course
+
+
+
+// {
+//     "Name": "asdasdфівфівфів",
+//     "id": "recUSv8AEzEP69TwX",
+//     "purchased": true
+//     }

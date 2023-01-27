@@ -16,7 +16,7 @@ export default function CourseForm({ courseAdded }) {
     const submitCourse = async (e) => {
         e.preventDefault();
         try {
-            await fetch('/functions/courses', {
+            await fetch('https://course-tracker.mdima4266.workers.dev/', {
                 method: 'POST',
                 body: JSON.stringify({ name, link, tags }),
             });
@@ -25,7 +25,6 @@ export default function CourseForm({ courseAdded }) {
         } catch (err) {
             console.error(err);
         }
-        console.log(name, link);
     };
     
     return (
